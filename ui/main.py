@@ -33,7 +33,7 @@ def load_ui_by_role(role):
     nav_frame.grid(row=0, column=0, sticky="ns") # Place nav_frame on the left, spanning rows
     nav_frame.grid_propagate(False) # Prevent frame from shrinking to fit widgets
 
-    # Main content frame
+ # Main content frame
     main_frame = tk.Frame(root, bg="white")
     main_frame.grid(row=0, column=1, sticky="nsew", padx=10, pady=10) # Place main_frame on the right
 
