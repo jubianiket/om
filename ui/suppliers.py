@@ -41,11 +41,11 @@ def open_suppliers(main_frame):
         except Exception as e:
             messagebox.showerror("DB Error", str(e))
 
-    tk.Button(win, text="Add Supplier", command=add_supplier).pack(pady=10)
+    tk.Button(main_frame, text="➕Add Supplier", command=add_supplier, bg="green", fg="white").pack(pady=20)
 
     # Table to view suppliers
     cols = ("ID", "Name", "Contact")
-    tree = ttk.Treeview(win, columns=cols, show='headings')
+    tree = ttk.Treeview(main_frame, columns=cols, show='headings')
     for col in cols:
         tree.heading(col, text=col)
         tree.column(col, width=180, anchor="center")
