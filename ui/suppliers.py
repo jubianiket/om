@@ -3,20 +3,21 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import sqlite3
 
-def open_suppliers():
-    win = tk.Toplevel()
-    win.title("Supplier Management")
-    win.geometry("600x400")
+def open_suppliers(main_frame):
+    for widget in main_frame.winfo_children():
+        widget.destroy()
 
+    # --- Heading ---
+    tk.Label(main_frame, text="📥 Supplier Entry", font=("Arial", 16, "bold"), fg="darkblue").pack(pady=10)
     name_var = tk.StringVar()
     contact_var = tk.StringVar()
 
     # Input Form
-    tk.Label(win, text="Supplier Name").pack(pady=5)
-    tk.Entry(win, textvariable=name_var).pack()
+    tk.Label(main_frame, text="Supplier Name").pack(anchor="w", padx=10)
+    tk.Entry(main_frame, textvariable=name_var, width=30).pack(padx=10, pady=2)
 
-    tk.Label(win, text="Contact Details").pack(pady=5)
-    tk.Entry(win, textvariable=contact_var).pack()
+    tk.Label(main_frame, text="Supplier Details").pack(anchor="w", padx=10)
+    tk.Entry(main_frame, textvariable=contact_var, width=30).pack(padx=10, pady=2)
 
     def add_supplier():
         name = name_var.get().strip()
