@@ -11,7 +11,7 @@ from batches import open_batches
 
 def clear_main_frame(main_frame):
  for widget in main_frame.winfo_children():
- widget.destroy()
+  widget.destroy()
 
 def show_frame(frame_func, main_frame):
  clear_main_frame(main_frame)
